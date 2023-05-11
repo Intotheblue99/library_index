@@ -26,7 +26,7 @@ body{
     justify-content: center;
     margin-top: 30px;
 }
-.addmedia {
+.add-media {
     padding: 10px;
     border-radius: 10px;
     background-color: red;
@@ -37,14 +37,96 @@ body{
     box-shadow: 10px 5px 52px red;
 }
 
+.media-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 250px;
+    max-width: 80%;
+}
+
+.media-form.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.form-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.form-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.form-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.form-body {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#background-shadow {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+#background-shadow.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .media-table {
     /* margin-top: 0px; */
     background-color: tan;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
     /* display: grid;
     grid-auto-flow: column; */
     width: 1200px;
     margin: 0 auto;
     box-shadow: 10px 30px 82px red;
+    height: 520px;
 }
+
+.media-content {
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+}
+
+p {
+    font-weight: bold;
+    /* text-align: center; */
+}
+.divider {
+    background-color: black;
+    height: 500px;
+    width: 2px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+/* .movies {
+    text-align: center;
+}
+.books {
+    text-align: center;
+} */
