@@ -130,3 +130,11 @@ p {
 .books {
     text-align: center;
 } */
+
+#m-director.ns {
+    display: none;
+}
+
+#m-author.ns {
+    display: none;
+}

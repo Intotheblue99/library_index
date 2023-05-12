@@ -28,6 +28,7 @@
         <form class="form-body">
             <label for="m-type">Media Type:</label>
             <span aria-label="required">*</span><br>
+            
             <input type="radio" id="m-type" name="type" value="movie">
             <label for="m-type">Movie</label>
             <input type="radio" id="m-type" name="type" value="book">
@@ -40,11 +41,14 @@
             <label for="m-year">Year Published:</label><br>
             <input type="text" id="m-year" name="year" minlength="4" maxlength="4"><br>
 
-            <label for="m-director">Director Name:</label><br>
+            <label for="m-author" >Author Name:</label><br>
+            <input type="text" id="m-author" name="author"><br>
+
+            <label for="m-director" >Director Name:</label><br>
             <input type="text" id="m-director" name="director"><br>
 
-            <input type="reset">
-            <button class="entry" type="button">Add</button>
+            <input type="reset" class="reset">
+            <button class="entry" type="submit">Add</button>
         </form>
     </div>
 
