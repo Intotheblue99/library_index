@@ -65,11 +65,9 @@ function closeForm(form) {
 
 function mediaInputVisibility() {
     if (movieSelect.checked) {
-        console.log("movie")
         bookSelected.classList.add("ns");
         movieSelected.classList.remove("ns");
     } else {
-        console.log("book")
         movieSelected.classList.add("ns");
         bookSelected.classList.remove("ns");
     };
@@ -101,14 +99,20 @@ data.addEventListener("submit", (e)=> {
     const obj = new Media(type, title, year, author, director);
     
     library.push(obj);
-    console.log(library);
+    // console.log(library);
 
     sort(obj)
     data.reset();
 });
 
 function sort(obj){
-    console.log(obj.type)
+    if (obj.type === "movie") {
+        movies.push(obj);
+        console.log(movies)
+    } else {
+        books.push(obj);
+        console.log(books);
+    };
 };
 
 
