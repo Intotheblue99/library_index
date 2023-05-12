@@ -138,3 +138,15 @@ p {
 #m-author.ns {
     display: none;
 }
+
+.card {
+    background-color: red;
+    color: white;
+    font-style: oblique;
+    width: min-content;
+    padding: 1px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: 1px solid black;
+    box-shadow: 1px 1px 32px red;
+}

@@ -7,7 +7,6 @@ let movieSelect = document.querySelector("input[value='movie']");
 const movieSelected = document.getElementById("m-director");
 const bookSelected = document.getElementById("m-author");
 
-let library = [];
 let movies = [];
 let books = [];
 
@@ -97,10 +96,6 @@ data.addEventListener("submit", (e)=> {
     const author = data.elements.author.value;
     const director = data.elements.director.value;
     const obj = new Media(type, title, year, author, director);
-    
-    library.push(obj);
-    // console.log(library);
-
     sort(obj)
     data.reset();
 });
@@ -108,20 +103,59 @@ data.addEventListener("submit", (e)=> {
 function sort(obj){
     if (obj.type === "movie") {
         movies.push(obj);
+        movieDisplay(movies);
         console.log(movies)
     } else {
         books.push(obj);
+        bookDisplay(books);
         console.log(books);
     };
+
 };
 
+const movieShelf = document.querySelector(".movies-display");
+const bookShelf = document.querySelector(".books-display");
+let library = [];
 
+function createCard(item){
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const cardTitle = document.createElement("p");
+    cardTitle.textContent = item.title;
+
+    const cardYear = document.createElement("p");
+    cardYear.textContent = item.year;
+
+    card.appendChild(cardTitle);
+    card.appendChild(cardYear);
+    return card;
+}
 
 
 function movieDisplay(movies) {
-    console.log(movies);
+    const available = movies.filter(item => !library.includes(item));
+    console.log(available);
+    
+    if (available.length > 0) {
+        const newItem = available[0];
+        library.push(newItem);
+
+        const card = createCard(newItem);
+        movieShelf.appendChild(card);
+    };
 };
 
+//save this code: appends new items from growing array without repeating//
 function bookDisplay(books) {
-    console.log(books);
+    const available = books.filter(item => !library.includes(item));
+    console.log(available);
+    
+    if (available.length > 0) {
+        const newItem = available[0];
+        library.push(newItem);
+
+        const card = createCard(newItem);
+        bookShelf.appendChild(card);
+    };
 };
