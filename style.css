@@ -121,15 +121,17 @@ p {
     background-color: black;
     height: 500px;
     width: 2px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 10px;
+    position: fixed;
+    left: 50%;
 }
 /* .movies {
-    text-align: center;
+    max-width: 470px;
 }
 .books {
-    text-align: center;
-} */
+    max-width: 470px;
+}  */
 
 #m-director.ns {
     display: none;
@@ -139,14 +141,52 @@ p {
     display: none;
 }
 
+.movies-display {
+    display: flex;
+    max-width: 450px;
+    max-height: 900px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+    position: relative;
+    left: -90px;
+}
+.books-display {
+    display: flex;
+    max-width: 450px;
+    max-height: 900px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+    position: relative;
+    left: -90px;
+}
+
 .card {
+    position: relative;
     background-color: red;
     color: white;
     font-style: oblique;
     width: min-content;
-    padding: 1px;
+    /* padding: 1px; */
     border-radius: 10px;
     font-weight: bold;
     border: 1px solid black;
     box-shadow: 1px 1px 32px red;
+}
+.card .close-button {
+    background-color: rgb(110, 102, 102);
+    position: absolute;
+    color: white;
+    border-radius: 10px;
+    font-size: 1rem;
+    top: -5px;
+    right: -9px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: bold;
 }

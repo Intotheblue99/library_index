@@ -104,11 +104,11 @@ function sort(obj){
     if (obj.type === "movie") {
         movies.push(obj);
         movieDisplay(movies);
-        console.log(movies)
+        // console.log(movies)
     } else {
         books.push(obj);
         bookDisplay(books);
-        console.log(books);
+        // console.log(books);
     };
 
 };
@@ -120,13 +120,23 @@ let library = [];
 function createCard(item){
     const card = document.createElement("div");
     card.classList.add("card");
+    
+    const remove = document.createElement("button");
+    remove.textContent = "X";
+    remove.classList.add("close-button");
 
+    remove.addEventListener("click", ()=> {
+        card.remove();
+        library.pop();
+    });
+    console.log(library)
     const cardTitle = document.createElement("p");
     cardTitle.textContent = item.title;
 
     const cardYear = document.createElement("p");
     cardYear.textContent = item.year;
 
+    card.appendChild(remove);
     card.appendChild(cardTitle);
     card.appendChild(cardYear);
     return card;
